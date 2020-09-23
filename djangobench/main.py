@@ -10,12 +10,13 @@ import logging
 import os
 import subprocess
 import sys
+import pathlib
 
 from djangobench import perf
 
 __version__ = '0.10'
 
-DEFAULT_BENCHMARK_DIR = os.path.join(os.path.dirname(__file__), 'benchmarks')
+DEFAULT_BENCHMARK_DIR = pathlib.PurePath(os.path.dirname(__file__), 'benchmarks')
 
 
 def run_benchmarks(control, experiment, benchmark_dir, benchmarks, trials,
